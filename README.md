@@ -11,6 +11,9 @@ Dersom du ønsker å teste visning av testresultater i Grafana, så kan du kjør
 Grafana k6 har laget en docker-compose setup for dette (link);
 
 `git clone 'https://github.com/grafana/k6'
+
 cd k6
+
 docker-compose up -d influxdb grafana
+
 docker-compose run -v $PWD/samples:/scripts k6 run /scripts/es6sample.js`
