@@ -16,3 +16,8 @@ cd k6
 docker-compose up -d influxdb grafana
 docker-compose run -v $PWD/samples:/scripts k6 run /scripts/es6sample.js
 ```
+
+Når dette er gjort kan du nå Grafana på http://localhost:3000/ og InfluxDB på http://localhost:8086
+
+For å sende output fra testene til InfluxDB:
+`k6 run --out influxdb=http:\\localhost:8086 .\simple.js`
