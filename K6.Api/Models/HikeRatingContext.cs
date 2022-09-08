@@ -10,5 +10,10 @@ namespace K6.Api.Models
         }
 
         public DbSet<HikeRating> HikeRatings { get; set; } = null!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Seed();
+        }
     }
 }
