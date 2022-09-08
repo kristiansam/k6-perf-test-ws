@@ -15,4 +15,5 @@
 13. Lag en test med en abort on fail innstilling.
 14. Lag en test som kombinerer checks med threshold
 15. Test output til csv og/eller json.
-16. [Valgfritt] Test output til Grafana og InfluxDB (se oppskrift i readme.md)
+16. Test output til html
+17. [Valgfritt] Test output til Grafana og InfluxDB (se oppskrift i readme.md)
