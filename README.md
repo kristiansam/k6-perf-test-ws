@@ -4,6 +4,12 @@
 
 Gå til 'K6.Api' katalogen. Om du har .NET CLI så kan du starte api'et med kommandoen `dotnet run .`
 
+Alternativt kan api'et kjøres i en docker container. Du må da først bygge en container fra samme katalog som over:
+`docker build -t k6api:latest .`
+
+Så kan du kjøre den:
+`docker run --rm -p 5000:5000 -p 5001:5001 -e ASPNETCORE_HTTP_PORT=https://+:5001 -e ASPNETCORE_URLS=http://+:5000 k6api:latest`
+
 
 ## Kjøre Grafana og InfluxDB lokalt [Valgfritt]
 
