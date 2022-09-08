@@ -8,18 +8,17 @@ export const options = {
     { duration: '5m', target: 0 }, // ramp-down to 0 users
   ],
   thresholds: {
-    'http_req_duration': ['p(99)<1500'], // 99% of requests must complete below 1.5s
-    'logged in successfully': ['p(99)<1500'], // 99% of requests must complete below 1.5s
+    'http_req_duration': ['p(99)<1000'], // 99% of requests must complete below 1s
   },
 };
 
-const BASE_URL = 'https://test-api.k6.io';
+const BASE_URL = 'http://localhost:5199';
 
 export default () => {
 
 
-  const myObjects = http.get(`${BASE_URL}/my/crocodiles/`, authHeaders).json();
-  check(myObjects, { 'retrieved crocodiles': (obj) => obj.length > 0 });
+  const hikes = http.get(`${BASE_URL}/api/HikeRatings`).json();
+  check(hikes, { 'retrieved hikes': (obj) => obj.length > 0 });
 
   sleep(1);
 };

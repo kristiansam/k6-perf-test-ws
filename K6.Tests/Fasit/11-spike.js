@@ -13,13 +13,13 @@ export const options = {
   ],
 };
 export default function () {
-  const BASE_URL = 'https://test-api.k6.io'; // make sure this is not production
+  const BASE_URL = 'http://localhost:5199';
 
   const responses = http.batch([
-    ['GET', `${BASE_URL}/public/crocodiles/1/`, null, { tags: { name: 'PublicCrocs' } }],
-    ['GET', `${BASE_URL}/public/crocodiles/2/`, null, { tags: { name: 'PublicCrocs' } }],
-    ['GET', `${BASE_URL}/public/crocodiles/3/`, null, { tags: { name: 'PublicCrocs' } }],
-    ['GET', `${BASE_URL}/public/crocodiles/4/`, null, { tags: { name: 'PublicCrocs' } }],
+    ['GET', `${BASE_URL}/api/HikeRatings/1`, null, { tags: { name: 'Hikes' } }],
+    ['GET', `${BASE_URL}/api/HikeRatings/2`, null, { tags: { name: 'Hikes' } }],
+    ['GET', `${BASE_URL}/api/HikeRatings/3`, null, { tags: { name: 'Hikes' } }],
+    ['GET', `${BASE_URL}/api/HikeRatings/4`, null, { tags: { name: 'Hikes' } }],
   ]);
 
   sleep(1);

@@ -9,14 +9,14 @@ export const options = {
   ],
 };
 
-const API_BASE_URL = 'https://test-api.k6.io';
+const API_BASE_URL = 'http://localhost:5199';
 
 export default function () {
   http.batch([
-    ['GET', `${API_BASE_URL}/public/crocodiles/1/`],
-    ['GET', `${API_BASE_URL}/public/crocodiles/2/`],
-    ['GET', `${API_BASE_URL}/public/crocodiles/3/`],
-    ['GET', `${API_BASE_URL}/public/crocodiles/4/`],
+    ['GET', `${API_BASE_URL}/api/HikeRatings/1`],
+    ['GET', `${API_BASE_URL}/api/HikeRatings/2`],
+    ['GET', `${API_BASE_URL}/api/HikeRatings/3`],
+    ['GET', `${API_BASE_URL}/api/HikeRatings/4`],
   ]);
 
   sleep(1);

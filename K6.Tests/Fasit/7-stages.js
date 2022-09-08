@@ -10,7 +10,7 @@ export const options = {
 };
 
 export default function () {
-  const res = http.get('https://httpbin.test.k6.io/');
+  const res = http.get('http://localhost:5199/api/HikeRatings');
   check(res, { 'status was 200': (r) => r.status == 200 });
   sleep(1);
 }

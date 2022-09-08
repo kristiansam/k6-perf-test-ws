@@ -8,7 +8,7 @@ export const options = {
 }
 
 export default function () {
-  let res = http.get('https://localhost:7999/');
+  let res = http.get('http://localhost:5199/api/HikeRatings');
   check(res, {
     'is status 200': (r) => r.status === 200,
   });
